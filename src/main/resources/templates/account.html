@@ -8,8 +8,9 @@
 </head>
 <body>
     <div class="container mx-auto">
-        <div class="mx-auto text-center">
-            <h1>Account: <span th:text="${address}">Address</span></h1>
+        <div class="border border-primary text-primary rounded mx-auto text-center" style="margin: 10px">
+            <h1>Miner information</h1>
+            <h1>Account: <a th:href="${'https://etherscan.io/address/' + address}" th:text="${address}">Address</a></h1>
         </div>
         <div class="row">
             <div class="border border-primary rounded col-sm text-center" style="padding: 10px; margin: 10px">
@@ -26,6 +27,7 @@
             </div>
         </div>
 
+        <div class="border border-primary rounded mx-auto text-center" style="margin: 10px">
         <table class="table table-bordered mx-auto" style="margin: 10px">
             <thead class="thead-dark">
             <tr>
@@ -46,6 +48,7 @@
             </tr>
             </tbody>
         </table>
+        </div>
     </div>
 </body>
 </html>
