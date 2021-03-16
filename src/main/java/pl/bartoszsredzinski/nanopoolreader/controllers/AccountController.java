@@ -20,6 +20,7 @@ public class AccountController{
         model.addAttribute("address", address);
         model.addAttribute("info", accountDataService.getAccountInfo(address));
         model.addAttribute("payout", accountDataService.getPayout(address));
+        model.addAttribute("chartData", accountDataService.getCharData(address));
 
         return "account";
     }

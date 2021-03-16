@@ -2,7 +2,9 @@ package pl.bartoszsredzinski.nanopoolreader.services;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import pl.bartoszsredzinski.nanopoolreader.model.*;
+import pl.bartoszsredzinski.nanopoolreader.model.DoubleBooleanData;
+import pl.bartoszsredzinski.nanopoolreader.model.IntegerBooleanData;
+import pl.bartoszsredzinski.nanopoolreader.model.prices.PricesData;
 
 import java.time.Duration;
 

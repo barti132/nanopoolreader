@@ -1,6 +1,8 @@
-package pl.bartoszsredzinski.nanopoolreader.model;
+package pl.bartoszsredzinski.nanopoolreader.model.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import pl.bartoszsredzinski.nanopoolreader.model.PeriodHashrate;
+import pl.bartoszsredzinski.nanopoolreader.model.Worker;
 
 import java.io.Serializable;
 

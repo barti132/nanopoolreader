@@ -1,4 +1,4 @@
-package pl.bartoszsredzinski.nanopoolreader.model;
+package pl.bartoszsredzinski.nanopoolreader.model.prices;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
