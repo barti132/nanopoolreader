@@ -21,7 +21,7 @@ public class AccountDataService{
     }
 
     public PayoutData getPayout(String address){
-        return localApiClient.get().uri("user/" + address).retrieve().bodyToMono(PayoutData.class).block(Duration.ofSeconds(5));
+        return localApiClient.get().uri("usersettings/" + address).retrieve().bodyToMono(PayoutData.class).block(Duration.ofSeconds(5));
     }
 
     public ChartData getCharData(String address){
