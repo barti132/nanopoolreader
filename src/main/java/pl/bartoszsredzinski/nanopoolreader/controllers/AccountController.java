@@ -23,7 +23,8 @@ public class AccountController{
         AccountInfo accountInfo = accountDataService.getAccountInfo(address);
         model.addAttribute("info", accountInfo);
         model.addAttribute("payout", (int)(accountInfo.getData().getBalance() / accountDataService.getPayout(address).getData().getPayout() * 100));
-        model.addAttribute("chartData", accountDataService.getCharData(address));
+        System.out.println();
+        model.addAttribute("chartHashrate", accountDataService.getChartHashrateData(address));
 
         return "account";
     }

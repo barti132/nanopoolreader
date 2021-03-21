@@ -5,6 +5,9 @@
     <title>User data</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
     <div class="container mx-auto">
@@ -49,7 +52,74 @@
             </tbody>
         </table>
         </div>
+
+        <div class="border border-primary rounded mx-auto text-center" style="margin: 10px">
+            <div style="width: 100%; overflow-x: auto; overflow-y: hidden">
+                <div style="width: 4000px; height: 300px">
+                    <canvas id="myChart" height="300" width="0"></canvas>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
 </body>
+
+<script th:inline="javascript">
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: 'Hashrate',
+                backgroundColor: '#a83232',
+                borderColor: '#a83232',
+                data:   /*[(${chartHashrate})]*/ '',
+                fill: false,
+            }]
+        },
+        options: {
+            elements: {
+                point:{
+                    radius: 0
+                }
+            },
+            maintainAspectRatio: false,
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Hashrate chart'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    type: 'time',
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Date'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Hashrate'
+                    }
+                }]
+            }
+        }
+    });
+
+
+</script>
 </html>
+

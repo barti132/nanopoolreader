@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 
-public class ChartInfo implements Serializable{
+public class ChartInfo implements Serializable, Comparable<ChartInfo>{
 
     @JsonProperty("date")
     private DateEpoch date;
@@ -25,5 +25,10 @@ public class ChartInfo implements Serializable{
 
     public Integer getHashrate(){
         return hashrate;
+    }
+
+    @Override
+    public int compareTo(ChartInfo o){
+        return date.getDate().compareTo(o.getTime());
     }
 }
